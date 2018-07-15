@@ -1,4 +1,4 @@
-page-accueil {
+page-signup {
 
     .list{
         width: 100%;
@@ -33,16 +33,13 @@ page-accueil {
         font-weight: bold;
     }
 
-    ion-row{
-        margin: 1.5rem;
+    ion-col{
+        margin-top: 1.5rem;
     }
 
     .btn{
+        margin-top: 2rem;
         width: 70%;
     }
-    
-    .btnOut{
-        width: 45%;
-    }
 
-} 
+}

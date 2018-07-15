@@ -1,0 +1,25 @@
+
+<ion-content class="bg-image" text-center >
+
+  <ion-list>
+
+    <img class="logo" src="../../assets/imgs/monkey1.png" alt="LogoSquizMe">
+
+    <button ion-button class="btnL" round [navPush]="InvitePage">Inviter des joueurs</button>
+
+    <button ion-button class="btn" round (click)="showRadio()">Choisir le type de manche</button>
+
+    <button ion-button class="btn" round (click)="openSetPage()">Lancer la manche</button>
+
+    <button ion-button class="btnY" round [navPush]="nextPage">Manche aléatoire</button>
+    
+  </ion-list>
+  
+
+</ion-content>
+  
+<ion-fab right bottom>
+  <button ion-fab class="backBtn" (click)="openPage()">
+    <ion-icon name="arrow-round-back"></ion-icon>
+  </button>
+</ion-fab>

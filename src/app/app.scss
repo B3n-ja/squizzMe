@@ -14,3 +14,76 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+
+
+//font----------------------------
+
+@font-face {
+    font-family: OSC;
+    src: url('../assets/fonts/OpenSansCondensed.woff2') format('woff2');
+}
+
+*{
+    font-family: OSC;
+}
+
+//picture---------------------------
+
+.bg-image{
+    background-image: url('../../assets/imgs/jungleDA2.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.logo{
+    display: block;
+    margin: auto;
+    width: 25%;
+    margin-top: 1.4rem;
+}
+
+
+//buttons--------------------------
+
+    //main button vert foncé
+.btn{
+    color: map-get($colors, sunl);
+    background-color: map-get($colors, jungle);
+    font-size: 2rem;        
+}
+    //main button vert clair
+.btnL{
+    color: map-get($colors, jungle);
+    background-color: map-get($colors, sunl);
+    font-size: 2rem;
+}
+
+    //button yellow
+.btnY{
+    color: map-get($colors, jungle);
+    background-color: map-get($colors, sun);
+    font-size: 2rem; 
+}
+
+    //outline button vert clair
+.btnOut{
+    color: map-get($colors, sunl);
+    border-color: rgba(255, 255, 255, 0);
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+    //back button
+.backBtn{
+    color: map-get($colors, sunl);
+    background-color: rgba(255, 255, 255, 0.212);
+    border-color:  map-get($colors, junglel);
+    width: 3rem;
+    height: 3rem;        
+}
+
+// alert-----------------------------
+

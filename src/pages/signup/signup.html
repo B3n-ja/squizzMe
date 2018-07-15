@@ -1,0 +1,39 @@
+<ion-content class="bg-image">
+
+  <img class="logo" src="../../assets/imgs/monkey1.png" alt="logo">
+
+
+  <ion-grid>
+
+    <ion-list class="list">
+
+      <ion-item class="item">
+        <!-- <ion-label stacked>Nom d'utilisateur</ion-label> -->
+        <ion-input type="text" name="username" placeholder="Nom d'utilisateur"></ion-input>
+      </ion-item>
+
+      <ion-item class="item">
+        <ion-input type="email" name="email" placeholder="Adresse email"></ion-input>
+      </ion-item>
+
+      <ion-item class="item" style="margin-bottom: 1.5rem">
+        <ion-input type="password" name="password" placeholder="Mot de passe"></ion-input>
+      </ion-item>
+
+      <ion-item class="item" style="margin-bottom: 1.5rem">
+          <ion-input type="password" name="password" placeholder="Confirmer votre mot de passe"></ion-input>
+        </ion-item>
+
+      <button ion-button class="btn" round (click)="openTabsPage()">S'inscrire</button>
+
+    </ion-list>
+
+  </ion-grid>
+
+</ion-content>
+
+<ion-fab right bottom>
+  <button ion-fab class="backBtn" (click)="openPage()">
+    <ion-icon name="arrow-round-back"></ion-icon>
+  </button>
+</ion-fab>
