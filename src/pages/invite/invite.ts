@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the InvitePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { AccessPage } from '../access/access';
 
 @IonicPage()
 @Component({
@@ -30,6 +25,10 @@ export class InvitePage {
 
   updateCucumberb() {
     console.log('Cucumbers new state:' + this.cucumber);
+  }
+
+  openPage() {
+    this.navCtrl.setRoot(AccessPage);
   }
 
 }
