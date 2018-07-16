@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
 
+import { AccessPage } from '../access/access';
 import { InvitePage } from '../invite/invite';
 import { SetPage } from '../set/set';
 
@@ -21,7 +22,7 @@ export class PlayPage {
   }
 
   openPage() {
-    this.navCtrl.pop();
+    this.navCtrl.setRoot(AccessPage);
   }
 
 

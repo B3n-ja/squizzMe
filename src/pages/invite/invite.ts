@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { AccessPage } from '../access/access';
+import { PlayPage } from '../play/play';
 
 @IonicPage()
 @Component({
@@ -11,20 +12,29 @@ import { AccessPage } from '../access/access';
 export class InvitePage {
 
   cucumber: boolean;
+  segmentTab: string = 'friend';
+  users = [];
+  team: number;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad InvitePage');
+    this.users = [
+      ["user 1",""],
+      ["user 2",""],
+      ["user 3",""],
+      ["user 4",""],
+    ];
   }
 
-  updateCucumber() {
-    console.log('Cucumbers new state:' + this.cucumber);
+  addToTeam(t, i) {
+    this.users[i][1] = t;
   }
 
-  updateCucumberb() {
-    console.log('Cucumbers new state:' + this.cucumber);
+  openPlayPage() {
+    this.navCtrl.setRoot(PlayPage);
   }
 
   openPage() {
