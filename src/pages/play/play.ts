@@ -32,21 +32,21 @@ export class PlayPage {
     alert.addInput({
       type: 'radio',
       label: 'Question',
-      value: 'question',
+      value: '1',
       checked: false
     });
 
     alert.addInput({
       type: 'radio',
       label: 'Mime',
-      value: 'word',
+      value: '2',
       checked: false
     });
 
     alert.addInput({
       type: 'radio',
       label: 'Mot',
-      value: 'word',
+      value: '3',
       checked: false
     });
 

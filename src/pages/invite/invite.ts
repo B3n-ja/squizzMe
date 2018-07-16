@@ -15,11 +15,21 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class InvitePage {
 
+  cucumber: boolean;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad InvitePage');
+  }
+
+  updateCucumber() {
+    console.log('Cucumbers new state:' + this.cucumber);
+  }
+
+  updateCucumberb() {
+    console.log('Cucumbers new state:' + this.cucumber);
   }
 
 }

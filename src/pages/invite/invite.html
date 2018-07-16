@@ -14,15 +14,58 @@
 
 
 <ion-content padding>
-  <button ion-button color="dark" full>Créer une partie</button>
 
-  <ion-item>
-    <ion-label>Roro</ion-label>
-    <ion-checkbox color="dark" checked="true"></ion-checkbox>
-  </ion-item>
-  <ion-card (tap)="tapEvent($event)">
-    <ion-item>
-      Tapped: {{tap}} times
-    </ion-item>
-  </ion-card>
+  <div padding>
+    <ion-segment [(ngModel)]="connected">
+      <ion-segment-button value="connected">
+        Connectés
+      </ion-segment-button>
+      <ion-segment-button value="teamA">
+        Equipe Monkey
+      </ion-segment-button>
+      <ion-segment-button value="teamB">
+        Equipe Snake
+        </ion-segment-button>
+    </ion-segment>
+  </div>
+  
+  <div [ngSwitch]="connected">
+
+    <ion-list *ngSwitchCase="'connected'">
+        
+
+        <ion-item>
+            <ion-label>Cucumber</ion-label>
+            <ion-checkbox [(ngModel)]="teamA" (ionChange)="updateCucumber()"></ion-checkbox>
+            <ion-checkbox [(ngModel)]="teamB" (ionChange)="updateCucumberb()"></ion-checkbox>
+          </ion-item>
+         
+          
+        
+
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'teamMonkey'">
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="#">
+        </ion-thumbnail>
+        <h2>Ruby</h2>
+      </ion-item>
+
+    </ion-list>
+  
+    <ion-list *ngSwitchCase="'teamSnake'">
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="#">
+        </ion-thumbnail>
+        <h2>Luna</h2>
+      </ion-item>
+      
+    </ion-list>
+  </div>
+
 </ion-content>
+
+

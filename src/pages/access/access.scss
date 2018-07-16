@@ -1,17 +1,9 @@
 page-access {
 
-    .btn{
-        font-size: 2.5rem;
+    .btn,
+    .btnY{
         display: block;
+        width: 100%;
     }
-
-   .btnS{
-        color: map-get($colors, jungle);
-        background-color: map-get($colors, junglel);;
-   }
-
-   .btnW{
-        color: map-get($colors, junglel);
-        background-color: map-get($colors, jungle);;    
-   }
+    
 }
