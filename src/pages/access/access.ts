@@ -9,9 +9,7 @@ import { PlayPage } from '../play/play';
 import { SettingsPage } from '../settings/settings';
 import { InvitePage } from '../invite/invite';
 import { AccueilPage } from '../accueil/accueil';
-
-
-
+import { SandboxPage } from '../sandbox/sandbox';
 
 /**
  * Generated class for the AccessPage page.
@@ -64,6 +62,10 @@ export class AccessPage {
 
   openInvitePage(){
     this.navCtrl.push(InvitePage);
+  }
+
+  openSandboxPage(){
+    this.navCtrl.push(SandboxPage);
   }
 
 }

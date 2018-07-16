@@ -1,12 +1,11 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { HttpModule } from '@angular/http';
+
 import { MyApp } from './app.component';
-
 import { AccessPage } from '../pages/access/access';
-
 import { TabsPage } from '../pages/tabs/tabs';
-
 import { AccueilPage } from '../pages/accueil/accueil';
 import { PasswordPage } from '../pages/password/password';
 import { SignupPage } from '../pages/signup/signup';
@@ -15,12 +14,11 @@ import { PlayPage } from '../pages/play/play';
 import { SetPage } from '../pages/set/set';
 import { SettingsPage } from '../pages/settings/settings';
 import { InvitePage } from '../pages/invite/invite';
-
-
-
+import { SandboxPage } from '../pages/sandbox/sandbox';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { ApiProvider } from '../providers/api/api';
 
 @NgModule({
   declarations: [
@@ -34,11 +32,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     PlayPage,
     SetPage,
     SettingsPage,
-    InvitePage
+    InvitePage,
+    SandboxPage
 
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -53,12 +53,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     PlayPage,
     SetPage,
     SettingsPage,
-    InvitePage
+    InvitePage,
+    SandboxPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ApiProvider
   ]
 })
 export class AppModule {}
