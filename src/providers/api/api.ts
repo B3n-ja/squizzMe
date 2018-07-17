@@ -10,7 +10,8 @@ import { Observable } from "rxjs/Rx"
 @Injectable()
 export class ApiProvider {
 
-  private apiURL = 'http://api.rabbithole.wdrlnd';
+  private baseURL: string = 'https://www.avnirvaccination.fr/squizzMeAPI/';
+  private options: any;
 
   constructor(public http: HttpClient) {
     console.log('Hello ApiProvider Provider');
@@ -46,16 +47,16 @@ export class ApiProvider {
     return;
   }
 
-  getQuizz(data): Observable<any> {
-    console.log('getQuizz');
-
-    return;
+  getQuizz(): Observable<any> {
+    console.log('getQuizz -> ' + this.baseURL+'quizz');
+    let retour = this.http.get(this.baseURL+'quizz');
+    console.log('--getQuizz from api.ts--'+retour+'--');
+    return retour;
   }
 
-  getTypeManche(): Observable<any> {
-    console.log('getTypeManche');
-
-    return;
+  getManche(): Observable<any> {
+    console.log('getManche');
+    return this.http.post(this.baseURL,JSON.stringify(this.options));
   }
 
   getThemes(): Observable<any> {
@@ -67,14 +68,14 @@ export class ApiProvider {
 
   getQuotes(): Observable<any> {
     //console.log('Hello RestProvider Provider -> getQuotes -> '+this.apiURL+'/quotes');
-    let retour = this.http.get(this.apiURL+'/quotes');
+    let retour = this.http.get(this.baseURL+'/quotes');
     console.log('--getQuotes from rest.ts--'+retour+'--');
     return retour;
 
   }
 
   addQuote(data) {
-    let retour = this.http.post(this.apiURL+'/quote', JSON.stringify(data));
+    let retour = this.http.post(this.baseURL+'/quote', JSON.stringify(data));
     console.log('--addQuote from rest.ts--'+retour+'--');
     return retour;
   }

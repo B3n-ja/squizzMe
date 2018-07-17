@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ApiProvider } from '../../providers/api/api';
 
 /**
  * Generated class for the SandboxPage page.
@@ -15,7 +16,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SandboxPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private api: ApiProvider) {
+  }
+
+  getQuizz() {
+    this.api.getQuizz().subscribe(data => {
+      console.log('data:'+data);
+    });
+    
   }
 
   ionViewDidLoad() {

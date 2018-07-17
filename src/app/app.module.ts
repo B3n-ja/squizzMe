@@ -2,6 +2,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { MyApp } from './app.component';
 import { AccessPage } from '../pages/access/access';
@@ -38,6 +39,7 @@ import { ApiProvider } from '../providers/api/api';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     HttpModule,
     IonicModule.forRoot(MyApp)
   ],
