@@ -13,6 +13,8 @@ export class GameDataProvider {
   user_id: number;
   username: string;
   bananaPoints: number;
+  teamNames = ['Macaque', 'Bonobo', 'Gorille', 'Capucin', 'Chimpanzé', 'Ouistiti', 'Gibbon', 'Mandrill', 'Orang-outan'];
+  friends = [];
 
   constructor(public http: HttpClient) {
     console.log('Hello GameDataProvider Provider');
@@ -40,6 +42,18 @@ export class GameDataProvider {
   
   getBP():number {
     return this.bananaPoints;
+  }
+
+  getTeamNames() {
+    return this.teamNames;
+  }
+
+  setFriends(friends) {
+    this.friends = friends;
+  }
+
+  getFriends() {
+    return this.friends;
   }
 
 }

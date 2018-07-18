@@ -1,158 +1,171 @@
 <ion-content class="bg-image">
 
-  <div padding>
+  <ion-card>
+    <ion-card-content>
 
-    <ion-segment padding="auto" [(ngModel)]="segmentTab">
+      <ion-segment padding="auto" [(ngModel)]="segmentTab">
 
-      <ion-segment-button value="friend">
-        Connectés
-        <ion-icon icon-start name="contact"></ion-icon>
-      </ion-segment-button>
+        <ion-segment-button value="friend">
+          Mes amis
+        </ion-segment-button>
 
-      <ion-segment-button value="teamA">
-        Equipe
-        <ion-icon icon-start name="logo-octocat"></ion-icon>
+        <ion-segment-button value="teamA">
+            <div class="segmentDiv">
+                <img class="teamLogo" src="../../assets/imgs/monkeyY.png">
+                {{ teamA }}
+            </div>   
+        </ion-segment-button>
 
-      </ion-segment-button>
-      <ion-segment-button value="teamB">
-        Equipe
-        <ion-icon icon-end name="bug"></ion-icon>
-      </ion-segment-button>
+        <ion-segment-button value="teamB">
+            <div class="segmentDiv">
+              <img class="teamLogo" src="../../assets/imgs/monkeyP.png">
+              {{ teamB }}
+            </div>
+        </ion-segment-button>
 
-    </ion-segment>
+      </ion-segment>
 
-  </div>
+      <div [ngSwitch]="segmentTab">
 
-  <div [ngSwitch]="segmentTab">
+          <ion-list *ngSwitchCase="'friend'">
+      
+            <ion-card>
+      
+              <ion-card-header>
+      
+                <ion-grid>
+      
+                  <ion-row>
 
-    <ion-list *ngSwitchCase="'friend'">
+                    <ion-col text-center>
+                      Constituer les équipes
+                    </ion-col>
 
-      <ion-card>
+                  </ion-row>
 
-        <ion-card-header>
+                  <ion-row>
 
-          <ion-grid>
+                      <ion-col text-center>
+                        {{ teamA }}
+                      </ion-col>
 
-            <ion-row>
-
-              <!-- <ion-col text-left>
-                <ion-icon icon-start name="logo-octocat"></ion-icon>
-              </ion-col> -->
-
-              <ion-col text-center>
-                Constituer les équipes
-              </ion-col>
-
-              <!-- <ion-col text-right>
-                <ion-icon icon-end name="bug"></ion-icon>
-              </ion-col> -->
-
-            </ion-row>
-
-          </ion-grid>
-
-        </ion-card-header>
-
-        <ion-card-content>
-          <ion-list *ngFor="let user of users; let i=index">
-
-            <ion-item *ngIf="user[1]==''">
-              <button ion-button item-start (click)="addToTeam('A', i)"><ion-icon icon-start name="logo-octocat"></ion-icon></button>
-              <ion-label>{{user[0]}} {{i}}</ion-label>
-              <button ion-button item-end (click)="addToTeam('B', i)"><ion-icon icon-end name="bug"></ion-icon></button>
-            </ion-item>
-
+                      <ion-col text-center>
+                          {{ teamB }}
+                        </ion-col>
+  
+                    </ion-row>
+      
+                </ion-grid>
+      
+              </ion-card-header>
+      
+              <ion-card-content>
+                <ion-list *ngFor="let friend of friends; let i=index">
+      
+                  <ion-item *ngIf="friend[2]==''">
+                    <!-- <button ion-button item-start (click)="addToTeam('A', i)"> -->
+                        <img class="teamLogo" src="../../assets/imgs/monkeyY.png" item-start (click)="addToTeam('A', i)">
+                    <!-- </button> -->
+                    <ion-label text-center>{{friend[1]}}1</ion-label>
+                    <!-- <button ion-button item-end (click)="addToTeam('B', i)"> -->
+                        <img class="teamLogo" src="../../assets/imgs/monkeyP.png" item-end (click)="addToTeam('B', i)">
+                    <!-- </button> -->
+                  </ion-item>
+      
+                </ion-list>
+              </ion-card-content>
+      
+            </ion-card>
+      
           </ion-list>
-        </ion-card-content>
+      
+          <ion-list *ngSwitchCase="'teamA'">
+      
+            <ion-card>
+      
+              <ion-card-header>
+      
+                <ion-grid>
+      
+                  <ion-row>
+      
+                      <ion-col text-left>
+                          <ion-item>
+                              <img class="teamLogo" src="../../assets/imgs/monkeyY.png" item-start>
+                              <ion-label>{{ teamA }}</ion-label>
+                          </ion-item>                      
+                        </ion-col>
+      
+                  </ion-row>
+      
+                </ion-grid>
+      
+              </ion-card-header>
+      
+              <ion-card-content>
+                <ion-list *ngFor="let friend of friends; let i=index">
+      
+                  <ion-item *ngIf="friend[2]=='A'">
+                    <ion-label>{{friend[1]}}</ion-label>
+                    <button ion-button item-end (click)="addToTeam('', i)">
+                      <ion-icon name="trash"></ion-icon>
+                    </button>
+                  </ion-item>
+      
+                </ion-list>
+              </ion-card-content>
+      
+            </ion-card>
+      
+          </ion-list>
+      
+          <ion-list *ngSwitchCase="'teamB'">
+            <ion-card>
+      
+              <ion-card-header>
+      
+                <ion-grid>
+      
+                  <ion-row>
+      
+                    <ion-col text-left>
+                      <ion-item>
+                          <img class="teamLogo" src="../../assets/imgs/monkeyP.png" item-start>
+                          <ion-label>{{ teamB }}</ion-label>
+                      </ion-item>                      
+                    </ion-col>
+      
+                  </ion-row>
+      
+                </ion-grid>
+      
+              </ion-card-header>
+      
+              <ion-card-content>
+                <ion-list *ngFor="let friend of friends; let i=index">
+      
+                  <ion-item *ngIf="friend[2]=='B'">
+                    <ion-label>{{friend[1]}}</ion-label>
+                    <button ion-button item-end (click)="addToTeam('', i)">
+                      <ion-icon name="trash"></ion-icon>
+                    </button>
+                  </ion-item>
+      
+                </ion-list>
+              </ion-card-content>
+      
+            </ion-card>
+      
+          </ion-list>
+      
+        </div>
 
-      </ion-card>
+    </ion-card-content>
+  </ion-card>
 
-    </ion-list>
-
-    <ion-list *ngSwitchCase="'teamA'">
-
-        <ion-card>
-
-            <ion-card-header>
-    
-              <ion-grid>
-    
-                <ion-row>
-    
-                  <ion-col text-left>
-                    <ion-icon icon-start name="logo-octocat"></ion-icon>
-                  </ion-col>
-    
-                  <ion-col text-center>
-                    Equipe A
-                  </ion-col>
-    
-                </ion-row>
-    
-              </ion-grid>
-    
-            </ion-card-header>
-    
-            <ion-card-content>
-              <ion-list *ngFor="let user of users; let i=index">
-    
-                <ion-item *ngIf="user[1]=='A'">
-                  <ion-label>{{user[0]}} {{i}}</ion-label>
-                  <button ion-button item-end (click)="addToTeam('', i)"><ion-icon name="trash"></ion-icon></button>
-                </ion-item>
-    
-              </ion-list>
-            </ion-card-content>
-
-          </ion-card>
-
-    </ion-list>
-
-    <ion-list *ngSwitchCase="'teamB'">
-        <ion-card>
-
-            <ion-card-header>
-    
-              <ion-grid>
-    
-                <ion-row>
-    
-                  <ion-col text-left>
-                    <ion-icon icon-start name="bug"></ion-icon>
-                  </ion-col>
-    
-                  <ion-col text-center>
-                    Equipe B
-                  </ion-col>
-    
-                </ion-row>
-    
-              </ion-grid>
-    
-            </ion-card-header>
-    
-            <ion-card-content>
-              <ion-list *ngFor="let user of users; let i=index">
-    
-                <ion-item *ngIf="user[1]=='B'">
-                  <ion-label>{{user[0]}} {{i}}</ion-label>
-                  <button ion-button item-end (click)="addToTeam('', i)"><ion-icon name="trash"></ion-icon></button>
-                </ion-item>
-    
-              </ion-list>
-            </ion-card-content>
-            
-          </ion-card>
-
-    </ion-list>
-
-  </div>
-  
   <div text-center>
-    <button ion-button type="submit" id="teamOK" value="teamOK" class="btn mt2" round (click)="openPlayPage()">Valider</button>
+    <button ion-button type="submit" id="teamOK" value="teamOK" class="btn mt2" round (click)="goToManche()">Valider</button>
   </div>
-  
-
 
 </ion-content>
 

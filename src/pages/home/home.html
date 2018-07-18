@@ -4,15 +4,20 @@
 
   <ion-grid>
     <ion-row justify-content-center align-item-center style="height: 100%">
+        <img class="monkeyLogo" src="../../assets/imgs/monkey1.png" alt="" max-width="15%">
       <ion-card margin-auto>
-          <img class="monkeyLogo" src="../../assets/imgs/monkey1.png" alt="" max-width="15%">
           <ion-card-content>
             <ion-card-title  justify-content-center>
-              {{ username }}
+              Bienvenue {{ username }},
             </ion-card-title>
-            <ion-icon name="trophy" color="primary"></ion-icon>
-            {{ bananaPoints }} BananaPoints
-            </ion-card-content>
+          </ion-card-content>
+          <ion-item>
+              <ion-avatar item-start>
+                  <img class="bananaPoints" src="../../assets/imgs/banane.png">
+              </ion-avatar>
+              <h2>BananaPoints</h2>
+              <ion-badge item-end>{{ bananaPoints }}</ion-badge>
+            </ion-item>
         </ion-card>
     </ion-row>
   </ion-grid>

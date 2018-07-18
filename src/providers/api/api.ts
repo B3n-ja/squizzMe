@@ -51,10 +51,11 @@ export class ApiProvider {
     return retour;
   }
 
-  getFriends(data): Observable<any> {
-    console.log('getFriends');
-
-    return;
+  getFriends(inputData): Observable<any> {
+    console.log('getFriends from apiProvider ' + this.baseURL + 'friends/ data: ' + inputData);
+    let retour = this.http.get(this.baseURL+'friends/' + inputData);
+    console.log('--getFriends from api.ts--'+retour+'--');
+    return retour;
   }
 
   getQuizz(): Observable<any> {
