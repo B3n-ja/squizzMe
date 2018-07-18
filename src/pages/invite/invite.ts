@@ -1,12 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the InvitePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { AccessPage } from '../access/access';
+import { PlayPage } from '../play/play';
 
 @IonicPage()
 @Component({
@@ -15,11 +11,34 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class InvitePage {
 
+  cucumber: boolean;
+  segmentTab: string = 'friend';
+  users = [];
+  team: number;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad InvitePage');
+    this.users = [
+      ["user 1",""],
+      ["user 2",""],
+      ["user 3",""],
+      ["user 4",""],
+    ];
+  }
+
+  addToTeam(t, i) {
+    this.users[i][1] = t;
+  }
+
+  openPlayPage() {
+    this.navCtrl.setRoot(PlayPage);
+  }
+
+  openPage() {
+    this.navCtrl.setRoot(AccessPage);
   }
 
 }
