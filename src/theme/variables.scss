@@ -52,8 +52,16 @@ $colors: (
 
 );
 
+/**
+AJOUT
+*/
 
+$toast-max-width: 80%;
+$toast-md-background: map-get($colors, sunl);
+$toast-md-title-color: map-get($colors, jungle);
 
+$toast-ios-background: map-get($colors, sunl);
+$toast-ios-title-color: map-get($colors, jungle);
 
 // App iOS Variables
 // --------------------------------------------------

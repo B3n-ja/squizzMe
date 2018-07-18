@@ -21,9 +21,11 @@ export class ApiProvider {
    * Add functions 
    */
 
-  addUser(data) {
-    console.log('addUser');
-
+  addUser(inputData) {
+    console.log('addUser from apiProvider ' + this.baseURL + 'user data: '+ JSON.stringify(inputData));
+    let retour = this.http.post(this.baseURL+'user' ,JSON.stringify(inputData));
+    console.log('--Retour addUser from api.ts--'+retour+'--');
+    return retour;
   }
   
   addManche(data) {
@@ -35,10 +37,18 @@ export class ApiProvider {
    * Get functions 
    */
 
-  getUser(data): Observable<any> {
-    console.log('getUser');
+  getRetrieve(inputData): Observable<any> {
+    console.log('getRetrieve from apiProvider ' + this.baseURL + 'retrieve/ data: ' + inputData['email']);
+    let retour = this.http.get(this.baseURL+'retrieve/' + inputData['email']);
+    console.log('--getRetrieve from api.ts--'+retour+'--');
+    return retour;
+  }
 
-    return;
+  getUser(inputData): Observable<any> {
+    console.log('getUser from apiProvider ' + this.baseURL + 'login data: '+ JSON.stringify(inputData));
+    let retour = this.http.post(this.baseURL+'login' ,JSON.stringify(inputData));
+    console.log('--Retour getUser from api.ts--'+retour+'--');
+    return retour;
   }
 
   getFriends(data): Observable<any> {

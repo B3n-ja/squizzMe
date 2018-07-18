@@ -9,27 +9,23 @@
 
   <img class="logo" src="../../assets/imgs/monkey1.png" alt="logo">
 
-  <ion-grid>
+  <form [formGroup]="credentialsForm">
 
-    <ion-list class="list">
+    <ion-item class="item">
+      <ion-input type="email" placeholder="Adresse email" [formControl]="credentialsForm.controls['email']"></ion-input>
+    </ion-item>
 
-      <ion-item class="item">
+    <ion-item class="item" style="margin-bottom: 1.5rem">
+      <ion-input type="password" placeholder="Mot de passe" [formControl]="credentialsForm.controls['password']"></ion-input>
+    </ion-item>
 
-        <ion-input type="email" name="email" placeholder="Adresse email"></ion-input>
+    <ion-row>
+      <ion-col text-center>
+        <button ion-button class="btn mt2" round (click)="login()">Se connecter</button>
+      </ion-col>
+    </ion-row>
 
-      </ion-item>
-
-      <ion-item class="item">
-
-        <ion-input type="password" name="password" placeholder="Mot de passe"></ion-input>
-
-      </ion-item>
-
-      <ion-row>
-        <ion-col>
-          <button ion-button class="btn" round (click)="openTabsPage()">Se connecter</button>
-        </ion-col>
-      </ion-row>
+  </form>
 
       <ion-row>
         <ion-col>
@@ -37,12 +33,6 @@
           <button ion-button class="btnOut" outline round [navPush]="SignupPage">Inscription</button>
         </ion-col>
       </ion-row>
-
-    </ion-list>
-
-
-  </ion-grid>
-
 
 </ion-content>
 

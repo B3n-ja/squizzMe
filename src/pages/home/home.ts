@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
 import { AccessPage } from '../access/access';
 
+import { GameDataProvider } from '../../providers/game-data/game-data';
 
 @Component({
   selector: 'page-home',
@@ -10,8 +11,13 @@ import { AccessPage } from '../access/access';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
-
+  user_id: number;
+  username: string;
+  bananaPoints: number;
+  constructor(private gameData: GameDataProvider, public navCtrl: NavController, public navParams: NavParams) {
+    this.user_id = this.gameData.getUID();
+    this.username = this.gameData.getUsername();
+    this.bananaPoints = this.gameData.getBP();
   }
 
   openPage() {

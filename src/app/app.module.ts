@@ -20,6 +20,7 @@ import { SandboxPage } from '../pages/sandbox/sandbox';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ApiProvider } from '../providers/api/api';
+import { GameDataProvider } from '../providers/game-data/game-data';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { ApiProvider } from '../providers/api/api';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ApiProvider
+    ApiProvider,
+    GameDataProvider
   ]
 })
 export class AppModule {}
