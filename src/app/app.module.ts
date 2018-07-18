@@ -12,7 +12,6 @@ import { PasswordPage } from '../pages/password/password';
 import { SignupPage } from '../pages/signup/signup';
 import { HomePage } from '../pages/home/home';
 import { PlayPage } from '../pages/play/play';
-import { SetTypePage } from '../pages/set-type/set-type';
 import { SetPage } from '../pages/set/set';
 import { SettingsPage } from '../pages/settings/settings';
 import { InvitePage } from '../pages/invite/invite';
@@ -33,7 +32,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SignupPage,
     HomePage,
     PlayPage,
-    SetTypePage,
     SetPage,
     SettingsPage,
     InvitePage
@@ -53,7 +51,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SignupPage,
     HomePage,
     PlayPage,
-    SetTypePage,
     SetPage,
     SettingsPage,
     InvitePage
