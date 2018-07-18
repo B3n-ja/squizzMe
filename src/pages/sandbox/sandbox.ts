@@ -20,7 +20,7 @@ export class SandboxPage {
   }
 
   getQuizz() {
-    this.api.getQuizz().subscribe(data => {
+    this.api.getQuizz('Quizz', 1).subscribe(data => {
       console.log('data:'+data);
     });
     

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 
 import { AccessPage } from '../access/access';
 import { PlayPage } from '../play/play';
@@ -22,7 +22,7 @@ export class InvitePage {
   teamA:string;
   teamB:string
 
-  constructor(private gameData: GameDataProvider, private api: ApiProvider, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private toastController: ToastController, private gameData: GameDataProvider, private api: ApiProvider, public navCtrl: NavController, public navParams: NavParams) {
     this.user_id = this.gameData.getUID();
     this.username = this.gameData.getUsername();
     this.friends = this.gameData.getFriends();
@@ -56,6 +56,12 @@ export class InvitePage {
 
   goToManche() {
     this.gameData.setFriends(this.friends);
+    this.gameData.setTeamsOK(1);
+    let mancheToast = this.toastController.create({
+      message: "Equipes constituées",
+      duration: 1000
+    });
+    mancheToast.present();
     this.navCtrl.pop();
   }
 

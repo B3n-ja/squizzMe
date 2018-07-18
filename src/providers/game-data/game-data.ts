@@ -15,6 +15,10 @@ export class GameDataProvider {
   bananaPoints: number;
   teamNames = ['Macaque', 'Bonobo', 'Gorille', 'Capucin', 'Chimpanzé', 'Ouistiti', 'Gibbon', 'Mandrill', 'Orang-outan'];
   friends = [];
+  modes = [];
+  teamsOK = 0;
+  selectedMode = 0;
+  selectedTheme = 0;
 
   constructor(public http: HttpClient) {
     console.log('Hello GameDataProvider Provider');
@@ -54,6 +58,38 @@ export class GameDataProvider {
 
   getFriends() {
     return this.friends;
+  }
+
+  setMode(modes) {
+    this.modes = modes;
+  }
+
+  getMode() {
+    return this.modes;
+  }
+
+  setTeamsOK(t: number){
+    this.teamsOK = t;
+  }
+
+  getTeamsOK():number {
+    return this.teamsOK;
+  }
+
+  setSelectedMode(t: number){
+    this.selectedMode = t;
+  }
+
+  getSelectedMode():number {
+    return this.selectedMode;
+  }
+
+  setSelectedTheme(t: number){
+    this.selectedTheme = t;
+  }
+
+  getSelectedTheme():number {
+    return this.selectedTheme;
   }
 
 }

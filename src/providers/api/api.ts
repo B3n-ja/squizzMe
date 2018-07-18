@@ -58,22 +58,25 @@ export class ApiProvider {
     return retour;
   }
 
-  getQuizz(): Observable<any> {
-    console.log('getQuizz -> ' + this.baseURL+'quizz');
-    let retour = this.http.get(this.baseURL+'quizz');
+  getQuizz(n:string, t:number): Observable<any> {
+    console.log('getQuizz -> ' + this.baseURL+n+'/'+t);
+    let retour = this.http.get(this.baseURL+n+'/'+t);
     console.log('--getQuizz from api.ts--'+retour+'--');
     return retour;
   }
 
-  getManche(): Observable<any> {
-    console.log('getManche');
-    return this.http.post(this.baseURL,JSON.stringify(this.options));
+  getMode(): Observable<any> {
+    console.log('getMode -> ' + this.baseURL+'modes');
+    let retour = this.http.get(this.baseURL+'modes');
+    console.log('--getMode from api.ts--'+retour+'--');
+    return retour;
   }
 
-  getThemes(): Observable<any> {
-    console.log('getThemes');
-
-    return;
+  getThemes(inputData): Observable<any> {
+    console.log('getThemes from apiProvider ' + this.baseURL + 'themes/ data: ' + inputData);
+    let retour = this.http.get(this.baseURL+'themes/' + inputData);
+    console.log('--getThemes from api.ts--'+retour+'--');
+    return retour;
   }
   
 

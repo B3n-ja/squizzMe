@@ -7,11 +7,17 @@
 
     <button ion-button class="btnL mb2" round [navPush]="InvitePage">Constituer les équipes</button>
 
-    <button ion-button class="btn inactif" round (click)="showRadio()">Choisir le type de manche</button>
+    <button ion-button class="btn inactif" round (click)="alertTeam()" *ngIf="!modeToggle">Choisir le type de manche</button>
+    <button ion-button class="btn" round (click)="showModes()" *ngIf="modeToggle">Choisir le type de manche</button>
 
-    <button ion-button class="btn inactif" round (click)="openSetPage()">Manche aléatoire</button>
+    <button ion-button class="btn inactif" round (click)="alertTeam()" *ngIf="!modeToggle">Manche aléatoire</button>
+    <button ion-button class="btn" round (click)="randomMode()" *ngIf="modeToggle">Manche aléatoire</button>
 
-    <button ion-button class="btnY inactif p3 mt4" round [navPush]="nextPage">Lancer la manche</button>
+    <button ion-button class="btn inactif" round (click)="alertManche()" *ngIf="!themeToggle">Choisir le thème</button>
+    <button ion-button class="btn" round (click)="showThemes()" *ngIf="themeToggle">Choisir le thème</button>
+
+    <button ion-button class="btnY inactif p3 mt4" round (click)="alertTheme()" *ngIf="!gameOK">Lancer la manche</button>
+    <button ion-button class="btnY p3 mt4" round (click)="gameOnBitch()" *ngIf="gameOK">Lancer la manche</button>
     
   </ion-list>
   

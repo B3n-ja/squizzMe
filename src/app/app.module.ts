@@ -16,6 +16,7 @@ import { SetPage } from '../pages/set/set';
 import { SettingsPage } from '../pages/settings/settings';
 import { InvitePage } from '../pages/invite/invite';
 import { SandboxPage } from '../pages/sandbox/sandbox';
+import { GamePage } from '../pages/game/game';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -35,7 +36,8 @@ import { GameDataProvider } from '../providers/game-data/game-data';
     SetPage,
     SettingsPage,
     InvitePage,
-    SandboxPage
+    SandboxPage,
+    GamePage
 
   ],
   imports: [
@@ -57,7 +59,8 @@ import { GameDataProvider } from '../providers/game-data/game-data';
     SetPage,
     SettingsPage,
     InvitePage,
-    SandboxPage
+    SandboxPage,
+    GamePage
   ],
   providers: [
     StatusBar,
