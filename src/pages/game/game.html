@@ -16,9 +16,9 @@
 <ion-content class="bg-image">
   <ion-slides (ionSlideDidChange)="slideChanged()">
     <ion-slide>
-        <img class="logo" src="../../assets/imgs/monkey1.png" alt="" style="max-width: 40%">
+        <img class="logo" src="../../assets/imgs/monkey1.png" alt="" style="max-width: 20%">
       <ion-card-content>
-        Répondez à un maximum de questions dans le temps imparti
+        Répondez à un maximum de questions<br>dans le temps imparti
         <button ion-button round class="btnY" (click)="gameStart()">Démarrer</button>
       </ion-card-content>
     </ion-slide>
@@ -58,6 +58,6 @@
     </ion-slide>
   </ion-slides>
   <ion-item>
-    <timer [timeInSeconds]="30"></timer>
+    <timer [timeInSeconds]="20"></timer>
   </ion-item>
 </ion-content>

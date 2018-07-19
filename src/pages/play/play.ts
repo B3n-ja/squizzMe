@@ -90,6 +90,7 @@ export class PlayPage {
       handler: data => {
         console.log('data:'+data);
         this.modeSelected = data;
+        this.loadThemes(this.modeSelected);
         this.gameData.setSelectedMode(data);
         alert.onDidDismiss(() => {
           let mancheToast = this.toastController.create({
@@ -102,7 +103,7 @@ export class PlayPage {
     });
     alert.present();
     this.themeToggle = 1;
-    this.loadThemes(this.modeSelected);
+    
   }
 
   getModeName(a: number) {
