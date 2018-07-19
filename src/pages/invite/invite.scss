@@ -16,4 +16,8 @@ page-invite {
         max-width: 25px;
         margin: auto 0;
     }
+
+    .jungle{
+        background-color:map-get($colors, junglel);
+    }
 }

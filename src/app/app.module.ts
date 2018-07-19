@@ -18,6 +18,10 @@ import { InvitePage } from '../pages/invite/invite';
 import { SandboxPage } from '../pages/sandbox/sandbox';
 import { GamePage } from '../pages/game/game';
 
+import { FlashCardComponent } from '../components/flash-card/flash-card';
+import { Timer } from '../components/countdown-timer/timer';
+import { TimerProgress } from '../components/timer-progress/timer-progress';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ApiProvider } from '../providers/api/api';
@@ -37,7 +41,10 @@ import { GameDataProvider } from '../providers/game-data/game-data';
     SettingsPage,
     InvitePage,
     SandboxPage,
-    GamePage
+    GamePage,
+    Timer,
+    TimerProgress,
+    FlashCardComponent,
 
   ],
   imports: [

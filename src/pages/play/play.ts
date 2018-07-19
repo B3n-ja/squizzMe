@@ -93,7 +93,7 @@ export class PlayPage {
         this.gameData.setSelectedMode(data);
         alert.onDidDismiss(() => {
           let mancheToast = this.toastController.create({
-            message: this.getModeName(data)+" séléctionnée",
+            message: "Manche sélectionnée : " + this.getModeName(data),
             duration: 2000
           });
           mancheToast.present();      
@@ -117,7 +117,7 @@ export class PlayPage {
     this.modeSelected = this.modes[r][0];
     this.gameData.setSelectedMode(this.modes[r][0]);
     let mancheToast = this.toastController.create({
-      message: this.modes[r][1]+" séléctionnée",
+      message: "Manche sélectionnée : " + this.modes[r][1],
       duration: 2000
     });
     mancheToast.present();
@@ -159,7 +159,7 @@ export class PlayPage {
         this.gameData.setSelectedTheme(data);
         alert.onDidDismiss(() => {
           let mancheToast = this.toastController.create({
-            message: this.getThemeName(data)+" séléctionnée",
+            message: "Thème sélectionné : "+this.getThemeName(data),
             duration: 2000
           });
           mancheToast.present();
@@ -179,7 +179,8 @@ export class PlayPage {
 
   gameOnBitch(){
     //Démarre la manche
-    this.navCtrl.push(GamePage, {'modeName': this.getModeName(this.gameData.getSelectedMode())});
+    console.log('gameOn ' + this.getModeName(this.gameData.getSelectedMode()) + this.getThemeName(this.gameData.getSelectedTheme()));
+    this.navCtrl.push(GamePage, {'modeName': this.getModeName(this.gameData.getSelectedMode()), 'themeName': this.getThemeName(this.gameData.getSelectedTheme())});
   }
 }
 

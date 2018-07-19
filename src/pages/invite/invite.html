@@ -1,6 +1,6 @@
 <ion-content class="bg-image">
 
-  <ion-card>
+  <ion-card class="bg-sunl">
     <ion-card-content>
 
       <ion-segment padding="auto" [(ngModel)]="segmentTab">
@@ -66,7 +66,7 @@
                     <!-- <button ion-button item-start (click)="addToTeam('A', i)"> -->
                         <img class="teamLogo" src="../../assets/imgs/monkeyY.png" item-start (click)="addToTeam('A', i)">
                     <!-- </button> -->
-                    <ion-label text-center>{{friend[1]}}1</ion-label>
+                    <ion-label text-center>{{friend[1]}}</ion-label>
                     <!-- <button ion-button item-end (click)="addToTeam('B', i)"> -->
                         <img class="teamLogo" src="../../assets/imgs/monkeyP.png" item-end (click)="addToTeam('B', i)">
                     <!-- </button> -->
@@ -107,8 +107,8 @@
       
                   <ion-item *ngIf="friend[2]=='A'">
                     <ion-label>{{friend[1]}}</ion-label>
-                    <button ion-button item-end (click)="addToTeam('', i)">
-                      <ion-icon name="remove-circle" color="jungle"></ion-icon>
+                    <button ion-button item-end (click)="addToTeam('', i)" class="jungle">
+                      <ion-icon name="remove"></ion-icon>
                     </button>
                   </ion-item>
       
@@ -146,8 +146,8 @@
       
                   <ion-item *ngIf="friend[2]=='B'">
                     <ion-label>{{friend[1]}}</ion-label>
-                    <button ion-button item-end (click)="addToTeam('', i)">
-                      <ion-icon name="remove-circle" color="jungle"></ion-icon>
+                    <button ion-button item-end (click)="addToTeam('', i)" class="jungle">
+                      <ion-icon name="remove"></ion-icon>
                     </button>
                   </ion-item>
       
